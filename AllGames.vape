@@ -503,12 +503,12 @@ local fly = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOp
 			end
 			flypress = game:GetService("UserInputService").InputBegan:connect(function(input1)
 				if flyupanddown["Enabled"] and game:GetService("UserInputService"):GetFocusedTextBox() == nil then
-					if input1.KeyCode == Enum.KeyCode.Space then
-						flyup = true
-					end
-					if input1.KeyCode == Enum.KeyCode.LeftControl then
-						flydown = true
-					end
+				   if flyup == false then
+                                      flyup = true
+                                    end
+				      if flyup == true then
+                                      flyup = false
+                                    end
 				end
 			end)
 			flyendpress = game:GetService("UserInputService").InputEnded:connect(function(input1)
